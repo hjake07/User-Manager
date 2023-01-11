@@ -1,0 +1,19 @@
+html 
+    head 
+        link(rel="stylesheet", href="styles.css")
+        title="User Manager"
+    body
+        header
+            a(href="/Users") All users
+        div.container
+            form(action="/Users", method="post", class="form") 
+                label(for='userName') Username:
+                input(type="text", id="userName", name="userName", class='input')
+                label(for='name') Name:
+                input(type="text", id="name", name="name", class='input')
+                label(for="email") Email:
+                input(type="text", id="email", name="email", class='input')
+                label(for="age") Age:
+                input(type="text", id="age", name="age", class='input') 
+                button(class='submit') Send
+
