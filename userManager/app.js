@@ -1,6 +1,7 @@
 const uid =Math.floor(Math.random() * 1000)
 console.log(uid);
 const express = require('express')
+const json = require('jsonfile')
 const app = express()
 const fs = require('fs');
 let count = 0
@@ -129,6 +130,7 @@ app.post('/Users', (req, res)=>{
         name: req.body.name,
         age: req.body.age
     }
+    usersId = uid
     fs.writeFile(`./views/info1.pug`,
 `
     //- splithere${count}
@@ -137,6 +139,7 @@ app.post('/Users', (req, res)=>{
         td ${user.username}
         td ${user.email}
         td ${user.age}
+        td #${usersId}
         td(class="none")
             form(action="/edit${count}" method="GET")
                 button(class="button", id="edit${count}") Edit
